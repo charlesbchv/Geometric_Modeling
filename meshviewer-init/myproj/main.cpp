@@ -93,11 +93,11 @@ void menu(int item)
 			for (vector<myHalfedge *>::iterator it = m->halfedges.begin(); it != m->halfedges.end(); it++)
 			{
 				myHalfedge *e = (*it);
-				myVertex *v1 = (*it)->source;
+				myVertex * verticeA = (*it)->source;
 				if ((*it)->twin == NULL) continue;
 				myVertex *v2 = (*it)->twin->source;
 
-				double d = pickedpoint->dist(v1->point, v2->point);
+				double d = pickedpoint->dist(verticeA->point, v2->point);
 				if (d < min) { min = d; closest_edge = e; } 
 			}
 			break;
@@ -125,6 +125,13 @@ void menu(int item)
 		{
 			m->subdivisionCatmullClark();
 			clear();
+			m->computeNormals();
+			makeBuffers(m);
+			break;
+		}
+	case MENU_SIMPLIFY:
+		{
+			m->simplify();
 			m->computeNormals();
 			makeBuffers(m);
 			break;
@@ -168,9 +175,6 @@ void menu(int item)
 	}
 	glutPostRedisplay();
 }
-
-
-
 
 //This function is called to display objects on screen.
 void display() 
@@ -251,19 +255,26 @@ void display()
 		glUniform4fv(glGetUniformLocation(shaderprogram, "kd"), 1, &color[0]);
 
 		vector <GLuint> silhouette_edges;
-		for (vector<myHalfedge *>::iterator it = m->halfedges.begin(); it != m->halfedges.end(); it++)
+		for (vector<myHalfedge*>::iterator it = m->halfedges.begin(); it != m->halfedges.end(); it++)
 		{
 			/**** TODO: WRITE CODE TO COMPUTE SILHOUETTE ****/
-			myHalfedge *e = (*it);
-			myVertex *v1 = (*it)->source;
+			myHalfedge* e = (*it);
+			myVertex* verticeA = (*it)->source;
 			if ((*it)->twin == NULL) continue;
-			myVertex *v2 = (*it)->twin->source;
+			myVertex* v2 = (*it)->twin->source;
+			myVector3D focusObjet = camera_eye - *(verticeA->point);
+			myVector3D* frontFace = e->frontAdj->normal;
+			myVector3D* joumFrontFace = e->twin->frontAdj->normal;
 
-			if ( true /*ADD THE CONDITION TO CHECK IF THE HALFEDGE DEFINED BY (V1, V2) IS A SILHOUETTE EDGE*/ )
+
+			double s1 = focusObjet * (*frontFace);
+			double s2 = focusObjet * (*joumFrontFace);
+
+			if (s1 * s2 < 0 /*ADD THE CONDITION TO CHECK IF THE HALFEDGE DEFINED BY (V1, V2) IS A SILHOUETTE EDGE*/)
 			{
-				silhouette_edges.push_back(v1->index);
+				silhouette_edges.push_back(verticeA->index);
 				silhouette_edges.push_back(v2->index);
-			}				
+			}
 		}
 
 		GLuint silhouette_edges_buffer;
@@ -336,7 +347,7 @@ void display()
 		glUseProgram(0);
 		glBegin(GL_TRIANGLES);
 		glColor3f(0.1f,0.1f,0.9f);
-		myHalfedge *e = closest_face->adjacent_halfedge;
+		myHalfedge *e = closest_face->halfEdgeAdj;
 		myVertex *v;
 		myVector3D r;
 
