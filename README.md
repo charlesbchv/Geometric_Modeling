@@ -2,7 +2,7 @@
 <p align="center"> 
 <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/charlesbchv/Geometrical_Modeling">
 <img alt="GitHub code size in bytes" src="https://img.shields.io/github/languages/code-size/charlesbchv/Geometrical_Modeling">
-<img alt="Last Commit" src="https://img.shields.io/github/last-commit/charlesbchv/geometrical_modeling?style=plastic&color=blue">
+<img alt="Last Commit" src="https://img.shields.io/github/last-commit/charlesbchv/geometrical_modeling?style=plastic&color=yellow">
 </p>
 
 # Geometric Modeling
