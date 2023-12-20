@@ -1,7 +1,7 @@
 <p align="center"><a href="https:/laravel.com" target="_blanc"><img src="https://lh6.googleusercontent.com/SYu88FkCo5fn0hyPcy9mkUzpK92z4sWhJcFvB6FgE8MMqoKttgNhbqa_2KfW4JN82ljWbpmnBIoRiKLBSsnvKAor2_ctFBTvd0-DfMdYo7lDYdDyTLZgB0P3JXYCrqOLe2ilRexB" width="400"></a></p>
 <p align="center"> 
-<img alt="GitHub language count" src="https://img.shields.io/github/languages/count/charlesbchv/Geometrical_Modeling">
-<img alt="GitHub code size in bytes" src="https://img.shields.io/github/languages/code-size/charlesbchv/Geometrical_Modeling">
+<img alt="GitHub language count" src="https://img.shields.io/github/languages/count/charlesbchv/Geometrical_Modeling?style=plastic&color=blue">
+<img alt="GitHub code size in bytes" src="https://img.shields.io/github/languages/code-size/charlesbchv/Geometrical_Modeling?style=plastic&color=violet">
 <img alt="Last Commit" src="https://img.shields.io/github/last-commit/charlesbchv/geometrical_modeling?style=plastic&color=yellow">
 </p>
 
