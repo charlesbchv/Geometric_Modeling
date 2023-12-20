@@ -4,8 +4,7 @@
 
 # Geometric Modeling
 
-Ce projet est une bibliothèque de manipulation de mesh 3D en C++, offrant des fonctionnalités telles que la subdivision Catmull-Clark, la simplification de mesh 3D, la triangulation, normals, silhouette.
-
+Ce projet académique est une bibliothèque de manipulation de mesh 3D en C++, offrant une gamme de fonctionnalités avancées pour la manipulation de mesh 3D, telles que la subdivision Catmull-Clark, la simplification de mesh 3D, la triangulation, normals, silhouette.
 
 
 
