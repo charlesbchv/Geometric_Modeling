@@ -16,7 +16,6 @@ Table des matières :
 1. [Prérequis](#prerequis)
 2. [Etape d'Installation](#etapeInstallation)
 3. [Fonctionnalité](#fonctionnalite)
-4. [Contribution](#contribution)
 
 
 
@@ -80,18 +79,6 @@ Table des matières :
 
 
 *******
-
-<div id='contribution'/>  
-
-## Contribution
-
-Les contributions sont les bienvenues. Veuillez suivre les étapes suivantes :
-
-- Forkez le projet
-- Créez votre branche de fonctionnalité (git checkout -b feature/AmazingFeature)
-- Committez vos changements (git commit -m 'Ajout d'une fonctionnalité incroyable')
-- Poussez vers la branche (git push origin feature/AmazingFeature)
-- Ouvrez une Pull Request
 
 
 © Réalisé par Charles Batchaev
